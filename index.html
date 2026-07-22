@@ -1,0 +1,228 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Coffee Referral | US Third-Wave Coffee Finder</title>
+    <meta
+      name="description"
+      content="A flavor-first recommendation site for finding coffees from US third-wave roasters."
+    >
+    <link rel="stylesheet" href="styles.css?v=3">
+    <script src="vendor/d3.min.js" defer></script>
+    <script src="flavor-wheel.js?v=3" defer></script>
+    <script src="app.js?v=3" defer></script>
+  </head>
+  <body>
+    <header class="hero">
+      <img
+        class="hero__image"
+        src="assets/coffee-roastery-hero.png"
+        alt="Coffee tasting table with bags, cups, and roasting equipment"
+      >
+      <div class="hero__shade" aria-hidden="true"></div>
+
+      <nav class="topbar" aria-label="Primary navigation">
+        <a class="brand" href="#matcher" aria-label="Coffee Referral home">
+          <span class="brand__mark" aria-hidden="true">CR</span>
+          <span>Coffee Referral</span>
+        </a>
+        <div class="topbar__links">
+          <a href="#matcher">Matcher</a>
+          <a href="#roasterIndex">Roasters</a>
+          <a href="#method">Method</a>
+        </div>
+      </nav>
+
+      <section class="hero__content" aria-label="Coffee Referral introduction">
+        <p class="eyebrow">US Third-Wave Coffee Finder</p>
+        <h1>Find a coffee that matches the cup you have in mind.</h1>
+        <p class="hero__copy">
+          Choose the tasting notes, brewing style, roast level, and risk level you want. The matcher ranks coffees from independent specialty roasters around the country.
+        </p>
+        <div class="hero__actions" aria-label="Hero actions">
+          <a class="button button--primary" href="#matcher">Start matching</a>
+          <a class="button button--ghost" href="#roasterIndex">Roaster index</a>
+        </div>
+        <dl class="hero__metrics" aria-label="Catalog snapshot">
+          <div>
+            <dt data-stat="roasters">40</dt>
+            <dd>Roasters</dd>
+          </div>
+          <div>
+            <dt data-stat="states">21</dt>
+            <dd>States</dd>
+          </div>
+          <div>
+            <dt data-stat="notes">18</dt>
+            <dd>Flavor cues</dd>
+          </div>
+        </dl>
+      </section>
+    </header>
+
+    <main>
+      <section class="match-studio" id="matcher">
+        <div class="studio-heading">
+          <div>
+            <p class="eyebrow eyebrow--dark">Flavor profile</p>
+            <h2>Build your cup</h2>
+            <p>
+              Use the original CoffeeSubscription flavor wheel, tune the brew, and open the roaster site when a match looks right.
+            </p>
+          </div>
+          <button class="icon-button" id="resetButton" type="button" aria-label="Reset matcher">
+            Reset
+          </button>
+        </div>
+
+        <div class="studio-grid">
+          <section class="wheel-panel" aria-label="Coffee flavor wheel selector">
+            <div class="wheel-panel__header">
+              <div>
+                <p class="eyebrow eyebrow--dark">Coffee flavor wheel</p>
+                <h3>Choose the notes you love</h3>
+                <p>Click inner-ring categories or outer-ring flavors to shape the recommendation.</p>
+              </div>
+              <button class="wheel-panel__clear" id="clearFlavorButton" type="button" hidden>
+                Clear
+              </button>
+            </div>
+            <div class="wheel-panel__chart" id="flavorWheel"></div>
+            <div class="wheel-panel__selection">
+              <div class="block-header">
+                <h3>Selected flavor notes</h3>
+                <span id="selectedCount">0 selected</span>
+              </div>
+              <div class="selected-flavors" id="selectedFlavorList">
+                <p>No flavors selected yet.</p>
+              </div>
+            </div>
+            <p class="wheel-panel__hint">Click a selected wheel segment or note below to remove it.</p>
+          </section>
+
+          <aside class="filter-panel" aria-label="Coffee preference controls">
+            <section class="control-block">
+              <div class="block-header">
+                <h3>Roast</h3>
+                <span>Optional</span>
+              </div>
+              <div class="segmented" data-choice-group="roast" aria-label="Choose roast level">
+                <button type="button" class="is-active" data-value="any">Any</button>
+                <button type="button" data-value="light">Light</button>
+                <button type="button" data-value="medium">Medium</button>
+                <button type="button" data-value="dark">Dark</button>
+              </div>
+            </section>
+
+            <section class="control-block">
+              <div class="block-header">
+                <h3>Brew method</h3>
+              </div>
+              <div class="segmented segmented--wrap" data-choice-group="brew" aria-label="Choose brew method">
+                <button type="button" class="is-active" data-value="any">Any</button>
+                <button type="button" data-value="pour-over">Pour-over</button>
+                <button type="button" data-value="espresso">Espresso</button>
+                <button type="button" data-value="milk">Milk drinks</button>
+                <button type="button" data-value="cold">Cold brew</button>
+              </div>
+            </section>
+
+            <section class="control-block control-grid">
+              <label>
+                <span>Region</span>
+                <select id="regionSelect">
+                  <option value="any">Anywhere in the US</option>
+                  <option value="Northeast">Northeast</option>
+                  <option value="Southeast">Southeast</option>
+                  <option value="Midwest">Midwest</option>
+                  <option value="Texas">Texas</option>
+                  <option value="Mountain">Mountain</option>
+                  <option value="West Coast">West Coast</option>
+                  <option value="Pacific Northwest">Pacific Northwest</option>
+                </select>
+              </label>
+
+              <label>
+                <span>Budget</span>
+                <select id="budgetSelect">
+                  <option value="any">Any price</option>
+                  <option value="$">$ everyday</option>
+                  <option value="$$">$$ specialty</option>
+                  <option value="$$$">$$$ splurge</option>
+                </select>
+              </label>
+            </section>
+
+            <section class="control-block">
+              <label class="range-label" for="adventureRange">
+                <span>Adventure level</span>
+                <strong id="adventureLabel">Balanced</strong>
+              </label>
+              <input id="adventureRange" type="range" min="0" max="100" step="5" value="55">
+              <div class="range-ends" aria-hidden="true">
+                <span>Comfort</span>
+                <span>Wild</span>
+              </div>
+            </section>
+
+            <section class="control-block control-block--last">
+              <label class="toggle">
+                <input id="decafToggle" type="checkbox">
+                <span>Show decaf-ready picks only</span>
+              </label>
+            </section>
+          </aside>
+        </div>
+
+        <section class="results-panel" aria-label="Recommended coffees">
+          <div class="results-toolbar">
+            <div>
+              <p class="eyebrow eyebrow--dark">Best match</p>
+              <h2 id="resultHeadline">Ready when you are</h2>
+            </div>
+            <p id="selectionSummary">Choose a few notes to sharpen the ranking.</p>
+          </div>
+
+          <div id="primaryMatch" aria-live="polite"></div>
+          <div class="secondary-grid" id="resultList" aria-label="More recommendations"></div>
+        </section>
+      </section>
+
+      <section class="roaster-band" id="roasterIndex">
+        <div class="section-heading">
+          <p class="eyebrow eyebrow--dark">Coverage</p>
+          <h2>Roaster index</h2>
+          <p>
+            A starter US third-wave catalog with official shop links. Inventory changes often, so the app favors roaster-owned pages over stale marketplace listings.
+          </p>
+        </div>
+        <div class="roaster-index" id="roasterGrid"></div>
+      </section>
+
+      <section class="method-band" id="method">
+        <div class="section-heading">
+          <p class="eyebrow eyebrow--dark">Recommendation logic</p>
+          <h2>How matches are ranked</h2>
+        </div>
+        <div class="method-grid">
+          <article>
+            <span>01</span>
+            <h3>Flavor first</h3>
+            <p>Selected notes carry the most weight, with close families such as citrus and tropical counted as light signals.</p>
+          </article>
+          <article>
+            <span>02</span>
+            <h3>Brew fit</h3>
+            <p>Espresso blends, filter coffees, milk-friendly profiles, and cold brew picks are scored against the brew control.</p>
+          </article>
+          <article>
+            <span>03</span>
+            <h3>Shop reality</h3>
+            <p>Recommendations point to official roaster shops because exact seasonal lots rotate quickly across specialty coffee.</p>
+          </article>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>
