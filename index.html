@@ -38,7 +38,7 @@
         <p class="eyebrow">US Third-Wave Coffee Finder</p>
         <h1>Find a coffee that matches the cup you have in mind.</h1>
         <p class="hero__copy">
-          Choose the tasting notes, brewing style, roast level, and risk level you want. The matcher ranks coffees from independent specialty roasters around the country.
+          Choose the tasting notes, brewing style, and roast level you want. The matcher ranks coffees from independent specialty roasters around the country.
         </p>
         <div class="hero__actions" aria-label="Hero actions">
           <a class="button button--primary" href="#matcher">Start matching</a>
@@ -121,6 +121,7 @@
               </div>
               <div class="segmented segmented--wrap" data-choice-group="brew" aria-label="Choose brew method">
                 <button type="button" class="is-active" data-value="any">Any</button>
+                <button type="button" data-value="drip">Drip coffee</button>
                 <button type="button" data-value="pour-over">Pour-over</button>
                 <button type="button" data-value="espresso">Espresso</button>
                 <button type="button" data-value="milk">Milk drinks</button>
@@ -152,18 +153,6 @@
                   <option value="$$$">$$$ splurge</option>
                 </select>
               </label>
-            </section>
-
-            <section class="control-block">
-              <label class="range-label" for="adventureRange">
-                <span>Adventure level</span>
-                <strong id="adventureLabel">Balanced</strong>
-              </label>
-              <input id="adventureRange" type="range" min="0" max="100" step="5" value="55">
-              <div class="range-ends" aria-hidden="true">
-                <span>Comfort</span>
-                <span>Wild</span>
-              </div>
             </section>
 
             <section class="control-block control-block--last">
@@ -214,7 +203,7 @@
           <article>
             <span>02</span>
             <h3>Brew fit</h3>
-            <p>Espresso blends, filter coffees, milk-friendly profiles, and cold brew picks are scored against the brew control.</p>
+            <p>Drip coffees, espresso blends, filter coffees, milk-friendly profiles, and cold brew picks are scored against the brew control.</p>
           </article>
           <article>
             <span>03</span>

@@ -31,7 +31,6 @@ const coffeeCatalog = [
     notes: ["chocolate", "caramel", "citrus"],
     process: "washed blend",
     price: "$$",
-    adventure: 42,
     decaf: false,
     reason: "A polished house blend with enough sweetness for daily brewing and enough lift for filter coffee."
   },
@@ -48,7 +47,6 @@ const coffeeCatalog = [
     notes: ["berry", "winey", "tropical"],
     process: "natural blend",
     price: "$$",
-    adventure: 88,
     decaf: false,
     reason: "Built for fruit-heavy cups, especially when you want the match to lean expressive and juicy."
   },
@@ -65,7 +63,6 @@ const coffeeCatalog = [
     notes: ["floral", "citrus", "tea-like"],
     process: "washed single origin",
     price: "$$$",
-    adventure: 76,
     decaf: false,
     reason: "A precise light-roast lane for delicate florals, citrus, and transparent filter brewing."
   },
@@ -82,7 +79,6 @@ const coffeeCatalog = [
     notes: ["stone fruit", "honey", "floral"],
     process: "washed single origin",
     price: "$$$",
-    adventure: 72,
     decaf: false,
     reason: "Great for a clean, elegant filter cup with stone-fruit sweetness and a soft floral finish."
   },
@@ -99,7 +95,6 @@ const coffeeCatalog = [
     notes: ["chocolate", "caramel", "nutty"],
     process: "seasonal blend",
     price: "$$",
-    adventure: 36,
     decaf: false,
     reason: "A friendly New England pick for balanced espresso, drip, and milk drinks."
   },
@@ -116,7 +111,6 @@ const coffeeCatalog = [
     notes: ["caramel", "chocolate", "citrus"],
     process: "espresso blend",
     price: "$$",
-    adventure: 40,
     decaf: false,
     reason: "A composed espresso pick with structure, sweetness, and enough brightness to stay lively."
   },
@@ -133,7 +127,6 @@ const coffeeCatalog = [
     notes: ["chocolate", "molasses", "spice"],
     process: "blend",
     price: "$$",
-    adventure: 34,
     decaf: false,
     reason: "A sturdy, sweet blend that makes sense when comfort matters more than acidity."
   },
@@ -150,7 +143,6 @@ const coffeeCatalog = [
     notes: ["caramel", "citrus", "chocolate"],
     process: "blend",
     price: "$$",
-    adventure: 45,
     decaf: false,
     reason: "A reliable all-rounder for someone who wants sweetness and structure without going dark."
   },
@@ -167,7 +159,6 @@ const coffeeCatalog = [
     notes: ["berry", "chocolate", "dried fruit"],
     process: "seasonal blend",
     price: "$$",
-    adventure: 58,
     decaf: false,
     reason: "A sweet and fruit-toned blend that bridges classic chocolate and modern fruit character."
   },
@@ -184,7 +175,6 @@ const coffeeCatalog = [
     notes: ["chocolate", "molasses", "spice"],
     process: "espresso blend",
     price: "$$",
-    adventure: 28,
     decaf: false,
     reason: "A deeper espresso direction for dense sweetness, heavy body, and milk drink performance."
   },
@@ -201,7 +191,6 @@ const coffeeCatalog = [
     notes: ["berry", "chocolate", "vanilla"],
     process: "blend",
     price: "$$",
-    adventure: 52,
     decaf: false,
     reason: "A West Coast staple for fruit-leaning espresso that still has chocolate weight."
   },
@@ -218,7 +207,6 @@ const coffeeCatalog = [
     notes: ["chocolate", "caramel", "nutty"],
     process: "blend",
     price: "$$",
-    adventure: 36,
     decaf: false,
     reason: "A crowd-friendly answer for rounded sweetness, approachable espresso, and easy daily cups."
   },
@@ -235,7 +223,6 @@ const coffeeCatalog = [
     notes: ["chocolate", "citrus", "stone fruit"],
     process: "blend",
     price: "$$",
-    adventure: 48,
     decaf: false,
     reason: "A balanced San Francisco blend with enough fruit to keep the classic profile interesting."
   },
@@ -252,7 +239,6 @@ const coffeeCatalog = [
     notes: ["honey", "citrus", "floral"],
     process: "seasonal blend",
     price: "$$",
-    adventure: 64,
     decaf: false,
     reason: "A brighter filter option for honeyed sweetness and a cleaner specialty profile."
   },
@@ -269,7 +255,6 @@ const coffeeCatalog = [
     notes: ["chocolate", "caramel", "spice"],
     process: "espresso blend",
     price: "$$",
-    adventure: 38,
     decaf: false,
     reason: "A grounded espresso profile with smooth sweetness and reliable milk compatibility."
   },
@@ -286,7 +271,6 @@ const coffeeCatalog = [
     notes: ["chocolate", "berry", "spice"],
     process: "espresso blend",
     price: "$$",
-    adventure: 46,
     decaf: false,
     reason: "A competition-style espresso profile with fruit depth and enough body for milk."
   },
@@ -303,7 +287,6 @@ const coffeeCatalog = [
     notes: ["citrus", "honey", "stone fruit"],
     process: "blend",
     price: "$$",
-    adventure: 62,
     decaf: false,
     reason: "A light, sweet Portland blend for clean cups with citrus and stone-fruit lift."
   },
@@ -320,7 +303,6 @@ const coffeeCatalog = [
     notes: ["floral", "tea-like", "citrus"],
     process: "washed single origin",
     price: "$$$",
-    adventure: 78,
     decaf: false,
     reason: "A refined choice when you want tea-like clarity and high-definition aromatics."
   },
@@ -337,7 +319,6 @@ const coffeeCatalog = [
     notes: ["chocolate", "caramel", "dried fruit"],
     process: "blend",
     price: "$$",
-    adventure: 44,
     decaf: false,
     reason: "A grounded espresso pick from a roaster that also leaves room for adventurous seasonal bags."
   },
@@ -354,7 +335,6 @@ const coffeeCatalog = [
     notes: ["chocolate", "berry", "caramel"],
     process: "blend",
     price: "$$",
-    adventure: 50,
     decaf: false,
     reason: "A versatile Pacific Northwest blend with sweetness, balance, and broad brew-method coverage."
   },
@@ -371,7 +351,6 @@ const coffeeCatalog = [
     notes: ["berry", "citrus", "floral"],
     process: "seasonal blend",
     price: "$$",
-    adventure: 70,
     decaf: false,
     reason: "A good fit for drinkers chasing lively acidity, florals, and colorful filter cups."
   },
@@ -388,7 +367,6 @@ const coffeeCatalog = [
     notes: ["chocolate", "stone fruit", "caramel"],
     process: "blend",
     price: "$$",
-    adventure: 48,
     decaf: false,
     reason: "A calm, sweet blend that stays specialty without demanding a fussy recipe."
   },
@@ -405,7 +383,6 @@ const coffeeCatalog = [
     notes: ["caramel", "nutty", "chocolate"],
     process: "blend",
     price: "$$",
-    adventure: 36,
     decaf: false,
     reason: "A Midwest comfort pick with creamy texture, nutty sweetness, and daily-driver range."
   },
@@ -422,7 +399,6 @@ const coffeeCatalog = [
     notes: ["chocolate", "molasses", "caramel"],
     process: "espresso blend",
     price: "$$",
-    adventure: 32,
     decaf: false,
     reason: "A classic third-wave espresso lane for syrupy sweetness and steady milk drinks."
   },
@@ -439,7 +415,6 @@ const coffeeCatalog = [
     notes: ["chocolate", "vanilla", "stone fruit"],
     process: "blend",
     price: "$$",
-    adventure: 50,
     decaf: false,
     reason: "A flexible Chicago blend with approachable sweetness and a little fruit around the edges."
   },
@@ -456,7 +431,6 @@ const coffeeCatalog = [
     notes: ["citrus", "caramel", "chocolate"],
     process: "blend",
     price: "$$",
-    adventure: 46,
     decaf: false,
     reason: "A tidy specialty blend for drinkers who want sweetness, balance, and a gentle citrus edge."
   },
@@ -473,7 +447,6 @@ const coffeeCatalog = [
     notes: ["chocolate", "caramel", "dried fruit"],
     process: "espresso blend",
     price: "$$",
-    adventure: 40,
     decaf: false,
     reason: "A sweet espresso blend with dried-fruit depth and a broad comfort zone."
   },
@@ -490,7 +463,6 @@ const coffeeCatalog = [
     notes: ["berry", "chocolate", "caramel"],
     process: "blend",
     price: "$$",
-    adventure: 54,
     decaf: false,
     reason: "A playful Denver pick for sweetness, berry hints, and a modern but approachable profile."
   },
@@ -507,7 +479,6 @@ const coffeeCatalog = [
     notes: ["citrus", "honey", "floral"],
     process: "blend",
     price: "$$",
-    adventure: 66,
     decaf: false,
     reason: "A bright Mountain-region option for clean sweetness and a lighter roast preference."
   },
@@ -524,7 +495,6 @@ const coffeeCatalog = [
     notes: ["chocolate", "citrus", "caramel"],
     process: "blend",
     price: "$$",
-    adventure: 46,
     decaf: false,
     reason: "A balanced Austin selection with enough brightness for filter and enough body for espresso."
   },
@@ -541,7 +511,6 @@ const coffeeCatalog = [
     notes: ["stone fruit", "caramel", "chocolate"],
     process: "washed single origin",
     price: "$$",
-    adventure: 56,
     decaf: false,
     reason: "A Texas match for clean sweetness and a single-origin profile that still feels approachable."
   },
@@ -558,7 +527,6 @@ const coffeeCatalog = [
     notes: ["chocolate", "caramel", "spice"],
     process: "espresso blend",
     price: "$$",
-    adventure: 38,
     decaf: false,
     reason: "A Miami espresso option for classic sweetness, spice, and milk drink dependability."
   },
@@ -575,7 +543,6 @@ const coffeeCatalog = [
     notes: ["nutty", "chocolate", "caramel"],
     process: "pulped natural",
     price: "$$",
-    adventure: 34,
     decaf: false,
     reason: "A smooth Southern pick for lower-acid comfort, nuttiness, and cold-brew friendliness."
   },
@@ -592,7 +559,6 @@ const coffeeCatalog = [
     notes: ["tropical", "berry", "winey"],
     process: "experimental",
     price: "$$$",
-    adventure: 92,
     decaf: false,
     reason: "A maximalist recommendation for colorful processing, loud fruit, and adventurous cups."
   },
@@ -609,7 +575,6 @@ const coffeeCatalog = [
     notes: ["chocolate", "nutty", "caramel"],
     process: "blend",
     price: "$$",
-    adventure: 35,
     decaf: false,
     reason: "A practical Philly blend for a classic cup with enough specialty polish."
   },
@@ -626,7 +591,6 @@ const coffeeCatalog = [
     notes: ["berry", "tropical", "winey"],
     process: "natural blend",
     price: "$$",
-    adventure: 82,
     decaf: false,
     reason: "A fruit-forward Virginia pick when your note choices point toward fermented, juicy flavors."
   },
@@ -643,7 +607,6 @@ const coffeeCatalog = [
     notes: ["chocolate", "citrus", "caramel"],
     process: "blend",
     price: "$$",
-    adventure: 48,
     decaf: false,
     reason: "A sunny California espresso blend with enough citrus to keep the profile crisp."
   },
@@ -660,7 +623,6 @@ const coffeeCatalog = [
     notes: ["chocolate", "caramel", "spice"],
     process: "blend",
     price: "$$",
-    adventure: 36,
     decaf: false,
     reason: "A comforting Southeast blend for sweetness, mellow spice, and low-drama brewing."
   },
@@ -677,7 +639,6 @@ const coffeeCatalog = [
     notes: ["citrus", "floral", "tea-like"],
     process: "washed blend",
     price: "$$",
-    adventure: 68,
     decaf: false,
     reason: "A clean DC filter pick for floral aromatics and crisp citrus."
   },
@@ -694,7 +655,6 @@ const coffeeCatalog = [
     notes: ["honey", "stone fruit", "citrus"],
     process: "blend",
     price: "$$",
-    adventure: 60,
     decaf: false,
     reason: "A graceful Northwest pick for bright sweetness and clean daily filter brewing."
   },
@@ -711,7 +671,6 @@ const coffeeCatalog = [
     notes: ["chocolate", "caramel", "nutty"],
     process: "decaf",
     price: "$$",
-    adventure: 28,
     decaf: true,
     reason: "A decaf-ready recommendation that keeps sweetness and everyday brew flexibility in play."
   },
@@ -728,7 +687,6 @@ const coffeeCatalog = [
     notes: ["chocolate", "brown sugar", "caramel"],
     process: "decaf",
     price: "$$",
-    adventure: 30,
     decaf: true,
     reason: "A West Coast decaf path for sweet, rounded cups without flattening the coffee."
   }
@@ -741,7 +699,6 @@ const state = {
   brew: "any",
   region: "any",
   budget: "any",
-  adventure: 55,
   decaf: false
 };
 
@@ -762,8 +719,6 @@ const dom = {
   primaryMatch: document.querySelector("#primaryMatch"),
   resultList: document.querySelector("#resultList"),
   roasterGrid: document.querySelector("#roasterGrid"),
-  adventureRange: document.querySelector("#adventureRange"),
-  adventureLabel: document.querySelector("#adventureLabel"),
   decafToggle: document.querySelector("#decafToggle"),
   regionSelect: document.querySelector("#regionSelect"),
   budgetSelect: document.querySelector("#budgetSelect"),
@@ -863,7 +818,7 @@ function scoreCoffee(coffee) {
 
   if (state.brew === "any") {
     score += 4;
-  } else if (coffee.brew.includes(state.brew)) {
+  } else if (brewMatches(coffee, state.brew)) {
     score += 14;
   } else {
     score -= 10;
@@ -880,9 +835,6 @@ function scoreCoffee(coffee) {
   if (state.decaf) {
     score += coffee.decaf ? 30 : -90;
   }
-
-  const adventureDelta = Math.abs(coffee.adventure - state.adventure);
-  score += Math.max(0, 18 - adventureDelta / 4);
 
   return Math.max(1, Math.min(99, Math.round(score)));
 }
@@ -904,6 +856,26 @@ function rankCatalog() {
     .sort((first, second) => second.score - first.score);
 }
 
+function brewMatches(coffee, brew) {
+  if (coffee.brew.includes(brew)) {
+    return true;
+  }
+  if (brew === "drip") {
+    return coffee.brew.includes("pour-over");
+  }
+  return false;
+}
+
+function formatBrewLabel(brew) {
+  return {
+    drip: "drip coffee",
+    "pour-over": "pour-over",
+    espresso: "espresso",
+    milk: "milk drinks",
+    cold: "cold brew"
+  }[brew] || brew;
+}
+
 function matchReason(coffee) {
   const matchedNotes = coffee.notes.filter((note) => state.notes.has(note));
   if (matchedNotes.length > 0) {
@@ -912,8 +884,8 @@ function matchReason(coffee) {
   if (state.decaf && coffee.decaf) {
     return `Keeps the search decaf-ready while matching a ${coffee.roast} roast and ${coffee.price} budget. ${coffee.reason}`;
   }
-  if (state.brew !== "any" && coffee.brew.includes(state.brew)) {
-    return `A strong ${state.brew} fit with ${coffee.notes.map(titleCase).slice(0, 3).join(", ")} notes. ${coffee.reason}`;
+  if (state.brew !== "any" && brewMatches(coffee, state.brew)) {
+    return `A strong ${formatBrewLabel(state.brew)} fit with ${coffee.notes.map(titleCase).slice(0, 3).join(", ")} notes. ${coffee.reason}`;
   }
   return coffee.reason;
 }
@@ -969,7 +941,6 @@ function updateRecommendations() {
   const [primary, ...rest] = ranked;
 
   dom.selectedCount.textContent = `${state.wheelSelections.size} selected`;
-  dom.adventureLabel.textContent = adventureLabel(state.adventure);
   dom.resultHeadline.textContent = primary ? `${primary.coffee} from ${primary.roaster}` : "No match found";
   dom.selectionSummary.textContent = selectionSummary();
 
@@ -998,7 +969,7 @@ function selectionSummary() {
     parts.push(`${state.roast} roast`);
   }
   if (state.brew !== "any") {
-    parts.push(state.brew);
+    parts.push(formatBrewLabel(state.brew));
   }
   if (state.region !== "any") {
     parts.push(state.region);
@@ -1007,19 +978,6 @@ function selectionSummary() {
     parts.push("decaf-ready");
   }
   return parts.length > 0 ? parts.join(" | ") : "Choose a few notes to sharpen the ranking.";
-}
-
-function adventureLabel(value) {
-  if (value < 25) {
-    return "Comfort";
-  }
-  if (value < 55) {
-    return "Balanced";
-  }
-  if (value < 80) {
-    return "Curious";
-  }
-  return "Wild";
 }
 
 function renderRoasterIndex() {
@@ -1074,11 +1032,6 @@ function bindFormControls() {
     updateRecommendations();
   });
 
-  dom.adventureRange.addEventListener("input", () => {
-    state.adventure = Number(dom.adventureRange.value);
-    updateRecommendations();
-  });
-
   dom.decafToggle.addEventListener("change", () => {
     state.decaf = dom.decafToggle.checked;
     updateRecommendations();
@@ -1103,7 +1056,6 @@ function resetMatcher() {
   state.brew = "any";
   state.region = "any";
   state.budget = "any";
-  state.adventure = 55;
   state.decaf = false;
 
   document.querySelectorAll("[data-choice-group]").forEach((group) => {
@@ -1114,7 +1066,6 @@ function resetMatcher() {
 
   dom.regionSelect.value = "any";
   dom.budgetSelect.value = "any";
-  dom.adventureRange.value = "55";
   dom.decafToggle.checked = false;
 
   wheelController.update(state.wheelSelections);

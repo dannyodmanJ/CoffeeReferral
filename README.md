@@ -16,7 +16,7 @@ Then visit `http://localhost:4173`.
 
 - A generated editorial hero image stored at `assets/coffee-roastery-hero.png`.
 - The original CoffeeSubscription D3 flavor wheel, ported to `flavor-wheel.js` with the same hierarchy, palette, hover behavior, and category selection.
-- A recommendation engine in `app.js` that scores coffees by wheel selections, roast, brew method, region, budget, decaf preference, and adventure level.
+- A recommendation engine in `app.js` that scores coffees by wheel selections, roast, brew method, region, budget, and decaf preference.
 - A starter catalog of US specialty roasters with official shop links.
 
 ## Notes on coverage

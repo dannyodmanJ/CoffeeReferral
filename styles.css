@@ -426,8 +426,7 @@ h3 {
   border-bottom: 0;
 }
 
-.block-header,
-.range-label {
+.block-header {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -436,8 +435,7 @@ h3 {
 }
 
 .block-header span,
-.range-ends,
-.range-label strong {
+label span {
   color: var(--muted);
   font-size: 13px;
   font-weight: 700;
@@ -492,11 +490,6 @@ label {
   font-weight: 800;
 }
 
-label span {
-  font-size: 13px;
-  color: var(--muted);
-}
-
 select {
   width: 100%;
   min-height: 44px;
@@ -505,17 +498,6 @@ select {
   color: var(--ink);
   background: #fff;
   padding: 0 12px;
-}
-
-input[type="range"] {
-  width: 100%;
-  accent-color: var(--coral);
-}
-
-.range-ends {
-  display: flex;
-  justify-content: space-between;
-  margin-top: 6px;
 }
 
 .toggle {
