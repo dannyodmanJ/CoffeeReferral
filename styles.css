@@ -637,7 +637,8 @@ select {
 
 .score-dial strong {
   display: block;
-  font-size: 32px;
+  max-width: 100px;
+  font-size: 22px;
   line-height: 1;
   text-align: center;
 }

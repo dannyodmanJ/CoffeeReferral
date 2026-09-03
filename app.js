@@ -865,9 +865,22 @@ function rankCatalog() {
     .filter((coffee) => coffee.availability === "available")
     .map((coffee) => ({
       ...coffee,
-      score: scoreCoffee(coffee)
+      rankScore: scoreCoffee(coffee)
     }))
-    .sort((first, second) => second.score - first.score);
+    .sort((first, second) => second.rankScore - first.rankScore);
+}
+
+function matchTier(rankScore) {
+  if (rankScore >= 80) {
+    return { adjective: "Excellent", label: "Excellent match" };
+  }
+  if (rankScore >= 60) {
+    return { adjective: "Strong", label: "Strong match" };
+  }
+  if (rankScore >= 40) {
+    return { adjective: "Good", label: "Good match" };
+  }
+  return { adjective: "Possible", label: "Possible match" };
 }
 
 function brewMatches(coffee, brew) {
@@ -908,7 +921,8 @@ function renderCard(coffee, isPrimary = false) {
   const card = createElement("article", `result-card ${isPrimary ? "result-card--primary" : "result-card--small"}`);
   const content = createElement("div", "result-content");
   const meta = createElement("div", "result-meta");
-  meta.append(createElement("span", "pill", `${coffee.score}% match`));
+  const tier = matchTier(coffee.rankScore);
+  meta.append(createElement("span", "pill", tier.label));
   meta.append(createElement("span", "pill pill--coral", titleCase(coffee.roast)));
   meta.append(createElement("span", "pill pill--blue", coffee.price));
   meta.append(createElement("span", "pill pill--available", `Available · checked ${formatCheckedDate(coffee.lastChecked)}`));
@@ -943,8 +957,9 @@ function renderCard(coffee, isPrimary = false) {
 
   if (isPrimary) {
     const scoreDial = createElement("div", "score-dial");
-    const scoreValue = createElement("strong", "", String(coffee.score));
+    const scoreValue = createElement("strong", "", tier.adjective);
     const scoreLabel = createElement("span", "", "match");
+    scoreDial.setAttribute("aria-label", tier.label);
     scoreDial.append(scoreValue, scoreLabel);
     card.append(scoreDial);
   }
