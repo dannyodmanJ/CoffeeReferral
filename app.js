@@ -25,10 +25,10 @@ const coffeeCatalog = [
     state: "AR",
     region: "Southeast",
     website: "https://onyxcoffeelab.com",
-    shopUrl: "https://onyxcoffeelab.com/collections/coffee",
+    productUrl: "https://onyxcoffeelab.com/products/southern-weather",
     roast: "medium",
     brew: ["pour-over", "espresso", "milk"],
-    notes: ["chocolate", "caramel", "citrus"],
+    notes: ["chocolate", "stone fruit", "nutty", "citrus"],
     process: "washed blend",
     price: "$$",
     decaf: false,
@@ -41,10 +41,10 @@ const coffeeCatalog = [
     state: "NC",
     region: "Southeast",
     website: "https://www.blackwhiteroasters.com",
-    shopUrl: "https://www.blackwhiteroasters.com/collections/all-things-coffee",
+    productUrl: "https://www.blackwhiteroasters.com/products/the-natural",
     roast: "light",
     brew: ["pour-over", "cold"],
-    notes: ["berry", "winey", "tropical"],
+    notes: ["berry", "chocolate", "citrus"],
     process: "natural blend",
     price: "$$",
     decaf: false,
@@ -52,15 +52,15 @@ const coffeeCatalog = [
   },
   {
     roaster: "Sey Coffee",
-    coffee: "Rotating Washed Ethiopia",
+    coffee: "Siti",
     city: "Brooklyn",
     state: "NY",
     region: "Northeast",
     website: "https://www.seycoffee.com",
-    shopUrl: "https://www.seycoffee.com/collections/coffee",
+    productUrl: "https://www.seycoffee.com/collections/coffee/products/2026-siti-ethiopia",
     roast: "light",
     brew: ["pour-over"],
-    notes: ["floral", "citrus", "tea-like"],
+    notes: ["stone fruit", "floral", "citrus"],
     process: "washed single origin",
     price: "$$$",
     decaf: false,
@@ -68,15 +68,15 @@ const coffeeCatalog = [
   },
   {
     roaster: "Passenger Coffee",
-    coffee: "Agaro Reserve",
+    coffee: "Agaro",
     city: "Lancaster",
     state: "PA",
     region: "Northeast",
-    website: "https://www.passengercoffee.com",
-    shopUrl: "https://www.passengercoffee.com/collections/coffee",
+    website: "https://drinkpassenger.com",
+    productUrl: "https://drinkpassenger.com/products/agaro",
     roast: "light",
     brew: ["pour-over"],
-    notes: ["stone fruit", "honey", "floral"],
+    notes: ["floral", "stone fruit", "citrus"],
     process: "washed single origin",
     price: "$$$",
     decaf: false,
@@ -84,15 +84,15 @@ const coffeeCatalog = [
   },
   {
     roaster: "Little Wolf Coffee",
-    coffee: "Keystone Blend",
+    coffee: "Companion Blend",
     city: "Ipswich",
     state: "MA",
     region: "Northeast",
     website: "https://littlewolf.coffee",
-    shopUrl: "https://littlewolf.coffee/collections/coffee",
+    productUrl: "https://littlewolf.coffee/collections/coffee/products/companion-blend-subscription",
     roast: "medium",
     brew: ["espresso", "milk", "pour-over"],
-    notes: ["chocolate", "caramel", "nutty"],
+    notes: ["berry", "chocolate", "caramel"],
     process: "seasonal blend",
     price: "$$",
     decaf: false,
@@ -105,10 +105,10 @@ const coffeeCatalog = [
     state: "MA",
     region: "Northeast",
     website: "https://georgehowellcoffee.com",
-    shopUrl: "https://georgehowellcoffee.com/collections/all-coffee",
+    productUrl: "https://georgehowellcoffee.com/products/alchemy-espresso-alc-001",
     roast: "medium",
     brew: ["espresso", "milk"],
-    notes: ["caramel", "chocolate", "citrus"],
+    notes: ["chocolate", "caramel", "berry", "nutty"],
     process: "espresso blend",
     price: "$$",
     decaf: false,
@@ -121,10 +121,10 @@ const coffeeCatalog = [
     state: "ME",
     region: "Northeast",
     website: "https://www.tandemcoffee.com",
-    shopUrl: "https://www.tandemcoffee.com/collections/coffee",
+    productUrl: "https://www.tandemcoffee.com/products/stoker-kinda-dark",
     roast: "medium",
     brew: ["espresso", "milk", "cold"],
-    notes: ["chocolate", "molasses", "spice"],
+    notes: ["chocolate", "honey", "berry"],
     process: "blend",
     price: "$$",
     decaf: false,
@@ -137,10 +137,10 @@ const coffeeCatalog = [
     state: "MD",
     region: "Northeast",
     website: "https://ceremonycoffee.com",
-    shopUrl: "https://ceremonycoffee.com/collections/all-coffee",
+    productUrl: "https://ceremonycoffee.com/products/thesis",
     roast: "medium",
     brew: ["pour-over", "espresso", "milk"],
-    notes: ["caramel", "citrus", "chocolate"],
+    notes: ["chocolate", "brown sugar", "caramel"],
     process: "blend",
     price: "$$",
     decaf: false,
@@ -153,7 +153,7 @@ const coffeeCatalog = [
     state: "NC",
     region: "Southeast",
     website: "https://counterculturecoffee.com",
-    shopUrl: "https://counterculturecoffee.com/collections/coffee",
+    productUrl: "https://counterculturecoffee.com/products/12-oz-hologram",
     roast: "medium",
     brew: ["pour-over", "espresso", "milk"],
     notes: ["berry", "chocolate", "dried fruit"],
@@ -169,10 +169,10 @@ const coffeeCatalog = [
     state: "CA",
     region: "West Coast",
     website: "https://bluebottlecoffee.com",
-    shopUrl: "https://bluebottlecoffee.com/us/eng/shop/coffee",
+    productUrl: "https://bluebottlecoffee.com/us/eng/product/hayes-valley-espresso",
     roast: "dark",
     brew: ["espresso", "milk"],
-    notes: ["chocolate", "molasses", "spice"],
+    notes: ["chocolate", "citrus", "brown sugar"],
     process: "espresso blend",
     price: "$$",
     decaf: false,
@@ -185,10 +185,10 @@ const coffeeCatalog = [
     state: "CA",
     region: "West Coast",
     website: "https://www.vervecoffee.com",
-    shopUrl: "https://www.vervecoffee.com/collections/all-coffee",
+    productUrl: "https://www.vervecoffee.com/products/sermon",
     roast: "medium",
     brew: ["espresso", "milk", "pour-over"],
-    notes: ["berry", "chocolate", "vanilla"],
+    notes: ["berry", "chocolate", "nutty"],
     process: "blend",
     price: "$$",
     decaf: false,
@@ -201,10 +201,10 @@ const coffeeCatalog = [
     state: "CA",
     region: "West Coast",
     website: "https://catandcloud.com",
-    shopUrl: "https://catandcloud.com/collections/coffee",
+    productUrl: "https://catandcloud.com/products/answer",
     roast: "medium",
     brew: ["espresso", "milk", "cold"],
-    notes: ["chocolate", "caramel", "nutty"],
+    notes: ["berry", "chocolate", "caramel"],
     process: "blend",
     price: "$$",
     decaf: false,
@@ -217,10 +217,10 @@ const coffeeCatalog = [
     state: "CA",
     region: "West Coast",
     website: "https://sightglasscoffee.com",
-    shopUrl: "https://sightglasscoffee.com/collections/coffee",
+    productUrl: "https://sightglasscoffee.com/products/blueboon-organic-blend",
     roast: "medium",
     brew: ["pour-over", "espresso"],
-    notes: ["chocolate", "citrus", "stone fruit"],
+    notes: ["chocolate", "citrus", "floral"],
     process: "blend",
     price: "$$",
     decaf: false,
@@ -228,19 +228,19 @@ const coffeeCatalog = [
   },
   {
     roaster: "Ritual Coffee Roasters",
-    coffee: "Sweet Tooth",
+    coffee: "Sweet Tooth Espresso Sochiapam",
     city: "San Francisco",
     state: "CA",
     region: "West Coast",
     website: "https://ritualcoffee.com",
-    shopUrl: "https://ritualcoffee.com/collections/coffee",
+    productUrl: "https://ritualcoffee.com/shop/coffee/sweet-tooth-espresso-sochiapam/",
     roast: "light",
-    brew: ["pour-over"],
-    notes: ["honey", "citrus", "floral"],
-    process: "seasonal blend",
+    brew: ["espresso"],
+    notes: ["stone fruit", "citrus", "chocolate"],
+    process: "washed single origin",
     price: "$$",
     decaf: false,
-    reason: "A brighter filter option for honeyed sweetness and a cleaner specialty profile."
+    reason: "A rotating single-origin espresso for bright stone fruit, citrus, and a chocolate finish."
   },
   {
     roaster: "Equator Coffees",
@@ -249,14 +249,14 @@ const coffeeCatalog = [
     state: "CA",
     region: "West Coast",
     website: "https://www.equatorcoffees.com",
-    shopUrl: "https://www.equatorcoffees.com/collections/coffee",
+    productUrl: "https://www.equatorcoffees.com/products/eye-of-the-tiger-espresso",
     roast: "medium",
     brew: ["espresso", "milk"],
-    notes: ["chocolate", "caramel", "spice"],
+    notes: ["berry", "citrus", "spice"],
     process: "espresso blend",
     price: "$$",
     decaf: false,
-    reason: "A grounded espresso profile with smooth sweetness and reliable milk compatibility."
+    reason: "A seasonally evolving espresso with cherry-lime brightness, baking spice, and a crisp finish."
   },
   {
     roaster: "Klatch Coffee",
@@ -265,7 +265,7 @@ const coffeeCatalog = [
     state: "CA",
     region: "West Coast",
     website: "https://www.klatchcoffee.com",
-    shopUrl: "https://www.klatchcoffee.com/collections/coffee",
+    productUrl: "https://www.klatchcoffee.com/collections/espresso/products/wbc-worlds-best-espresso",
     roast: "medium",
     brew: ["espresso", "milk"],
     notes: ["chocolate", "berry", "spice"],
@@ -281,14 +281,14 @@ const coffeeCatalog = [
     state: "OR",
     region: "Pacific Northwest",
     website: "https://www.heartroasters.com",
-    shopUrl: "https://www.heartroasters.com/collections/coffee",
+    productUrl: "https://www.heartroasters.com/products/stereo-seasonal-blend",
     roast: "light",
     brew: ["pour-over", "espresso"],
-    notes: ["citrus", "honey", "stone fruit"],
+    notes: ["berry", "vanilla", "chocolate"],
     process: "blend",
     price: "$$",
     decaf: false,
-    reason: "A light, sweet Portland blend for clean cups with citrus and stone-fruit lift."
+    reason: "A light Portland blend with cherry, sweet cream, and fudge for espresso or filter."
   },
   {
     roaster: "Coava Coffee Roasters",
@@ -297,11 +297,11 @@ const coffeeCatalog = [
     state: "OR",
     region: "Pacific Northwest",
     website: "https://coavacoffee.com",
-    shopUrl: "https://coavacoffee.com/collections/coffee",
+    productUrl: "https://shop.coavacoffee.com/products/kilenso",
     roast: "light",
     brew: ["pour-over"],
     notes: ["floral", "tea-like", "citrus"],
-    process: "washed single origin",
+    process: "natural single origin",
     price: "$$$",
     decaf: false,
     reason: "A refined choice when you want tea-like clarity and high-definition aromatics."
@@ -313,7 +313,7 @@ const coffeeCatalog = [
     state: "OR",
     region: "Pacific Northwest",
     website: "https://proudmarycoffee.com",
-    shopUrl: "https://proudmarycoffee.com/collections/coffee",
+    productUrl: "https://proudmarycoffee.com/products/humbler-blend",
     roast: "medium",
     brew: ["espresso", "milk"],
     notes: ["chocolate", "caramel", "dried fruit"],
@@ -329,7 +329,7 @@ const coffeeCatalog = [
     state: "WA",
     region: "Pacific Northwest",
     website: "https://www.olympiacoffee.com",
-    shopUrl: "https://www.olympiacoffee.com/collections/coffee",
+    productUrl: "https://www.olympiacoffee.com/products/big-truck",
     roast: "medium",
     brew: ["pour-over", "espresso", "milk"],
     notes: ["chocolate", "berry", "caramel"],
@@ -345,7 +345,7 @@ const coffeeCatalog = [
     state: "WA",
     region: "Pacific Northwest",
     website: "https://www.kumacoffee.com",
-    shopUrl: "https://www.kumacoffee.com/collections/coffee",
+    productUrl: "https://www.kumacoffee.com/products/coffee-bright-blend",
     roast: "light",
     brew: ["pour-over"],
     notes: ["berry", "citrus", "floral"],
@@ -356,19 +356,19 @@ const coffeeCatalog = [
   },
   {
     roaster: "Elm Coffee Roasters",
-    coffee: "Nine Swans",
+    coffee: "9 Swans Seasonal Coffee",
     city: "Seattle",
     state: "WA",
     region: "Pacific Northwest",
     website: "https://elmcoffeeroasters.com",
-    shopUrl: "https://elmcoffeeroasters.com/collections/coffee",
+    productUrl: "https://elmcoffeeroasters.com/products/9-swans-seasonal-coffee-2",
     roast: "medium",
     brew: ["pour-over", "espresso"],
-    notes: ["chocolate", "stone fruit", "caramel"],
-    process: "blend",
+    notes: ["chocolate", "berry", "caramel"],
+    process: "washed single origin",
     price: "$$",
     decaf: false,
-    reason: "A calm, sweet blend that stays specialty without demanding a fussy recipe."
+    reason: "A rotating single origin with caramelized sweetness that stays approachable as espresso or filter."
   },
   {
     roaster: "Ruby Coffee Roasters",
@@ -377,10 +377,10 @@ const coffeeCatalog = [
     state: "WI",
     region: "Midwest",
     website: "https://rubycoffeeroasters.com",
-    shopUrl: "https://rubycoffeeroasters.com/collections/coffee",
+    productUrl: "https://rubycoffeeroasters.com/products/creamery-seasonal-blend",
     roast: "medium",
     brew: ["pour-over", "espresso", "milk"],
-    notes: ["caramel", "nutty", "chocolate"],
+    notes: ["dried fruit", "berry", "nutty", "chocolate"],
     process: "blend",
     price: "$$",
     decaf: false,
@@ -393,10 +393,10 @@ const coffeeCatalog = [
     state: "IL",
     region: "Midwest",
     website: "https://www.intelligentsia.com",
-    shopUrl: "https://www.intelligentsia.com/collections/coffee",
+    productUrl: "https://www.intelligentsia.com/products/black-cat-classic-espresso",
     roast: "medium",
     brew: ["espresso", "milk"],
-    notes: ["chocolate", "molasses", "caramel"],
+    notes: ["berry", "citrus", "caramel"],
     process: "espresso blend",
     price: "$$",
     decaf: false,
@@ -404,12 +404,12 @@ const coffeeCatalog = [
   },
   {
     roaster: "Metric Coffee",
-    coffee: "Mothership",
+    coffee: "En Masse",
     city: "Chicago",
     state: "IL",
     region: "Midwest",
     website: "https://metriccoffee.com",
-    shopUrl: "https://metriccoffee.com/collections/coffee",
+    productUrl: "https://metriccoffee.com/products/en-masse",
     roast: "medium",
     brew: ["espresso", "milk", "pour-over"],
     notes: ["chocolate", "vanilla", "stone fruit"],
@@ -420,19 +420,19 @@ const coffeeCatalog = [
   },
   {
     roaster: "Madcap Coffee",
-    coffee: "Third Coast",
+    coffee: "Bolt",
     city: "Grand Rapids",
     state: "MI",
     region: "Midwest",
     website: "https://www.madcapcoffee.com",
-    shopUrl: "https://www.madcapcoffee.com/collections/coffee",
+    productUrl: "https://www.madcapcoffee.com/products/bolt",
     roast: "medium",
     brew: ["pour-over", "espresso"],
-    notes: ["citrus", "caramel", "chocolate"],
+    notes: ["chocolate", "caramel", "nutty"],
     process: "blend",
     price: "$$",
     decaf: false,
-    reason: "A tidy specialty blend for drinkers who want sweetness, balance, and a gentle citrus edge."
+    reason: "An always-on house blend for deep chocolate, caramelized sweetness, and low-acid versatility."
   },
   {
     roaster: "PT's Coffee",
@@ -441,7 +441,7 @@ const coffeeCatalog = [
     state: "KS",
     region: "Midwest",
     website: "https://ptscoffee.com",
-    shopUrl: "https://ptscoffee.com/collections/coffee",
+    productUrl: "https://ptscoffee.com/products/flying-monkey-espresso",
     roast: "medium",
     brew: ["espresso", "milk"],
     notes: ["chocolate", "caramel", "dried fruit"],
@@ -457,7 +457,7 @@ const coffeeCatalog = [
     state: "CO",
     region: "Mountain",
     website: "https://huckleberryroasters.com",
-    shopUrl: "https://huckleberryroasters.com/collections/coffee",
+    productUrl: "https://www.huckleberryroasters.com/products/blue-orchid",
     roast: "medium",
     brew: ["pour-over", "espresso"],
     notes: ["berry", "chocolate", "caramel"],
@@ -473,14 +473,14 @@ const coffeeCatalog = [
     state: "CO",
     region: "Mountain",
     website: "https://sweetbloomcoffee.com",
-    shopUrl: "https://sweetbloomcoffee.com/collections/coffee",
-    roast: "light",
-    brew: ["pour-over", "espresso"],
-    notes: ["citrus", "honey", "floral"],
+    productUrl: "https://sweetbloomcoffee.com/products/hometown-blend",
+    roast: "medium",
+    brew: ["pour-over", "espresso", "milk", "cold"],
+    notes: ["chocolate", "nutty", "berry"],
     process: "blend",
     price: "$$",
     decaf: false,
-    reason: "A bright Mountain-region option for clean sweetness and a lighter roast preference."
+    reason: "A full-bodied Colorado blend with cocoa, praline, and blackberry across espresso, drip, or cold brew."
   },
   {
     roaster: "Greater Goods Coffee",
@@ -489,11 +489,11 @@ const coffeeCatalog = [
     state: "TX",
     region: "Texas",
     website: "https://greatergoodsroasting.com",
-    shopUrl: "https://greatergoodsroasting.com/collections/coffee",
-    roast: "medium",
+    productUrl: "https://greatergoodsroasting.com/collections/single-origin/products/spark",
+    roast: "light",
     brew: ["pour-over", "espresso", "milk"],
-    notes: ["chocolate", "citrus", "caramel"],
-    process: "blend",
+    notes: ["chocolate", "nutty", "dried fruit"],
+    process: "washed single origin",
     price: "$$",
     decaf: false,
     reason: "A balanced Austin selection with enough brightness for filter and enough body for espresso."
@@ -505,7 +505,7 @@ const coffeeCatalog = [
     state: "TX",
     region: "Texas",
     website: "https://meritcoffee.com",
-    shopUrl: "https://meritcoffee.com/collections/coffee",
+    productUrl: "https://meritcoffee.com/products/andino",
     roast: "medium",
     brew: ["pour-over", "espresso"],
     notes: ["stone fruit", "caramel", "chocolate"],
@@ -521,27 +521,27 @@ const coffeeCatalog = [
     state: "FL",
     region: "Southeast",
     website: "https://www.panthercoffee.com",
-    shopUrl: "https://www.panthercoffee.com/collections/coffee",
+    productUrl: "https://panthercoffee.com/products/west-coast-panther-coffee-blend",
     roast: "medium",
-    brew: ["espresso", "milk"],
-    notes: ["chocolate", "caramel", "spice"],
+    brew: ["pour-over", "espresso", "milk"],
+    notes: ["citrus", "chocolate", "berry"],
     process: "espresso blend",
     price: "$$",
     decaf: false,
-    reason: "A Miami espresso option for classic sweetness, spice, and milk drink dependability."
+    reason: "A lively Miami blend with lemonade, malted chocolate, and berries for espresso or pour-over."
   },
   {
     roaster: "PERC Coffee",
-    coffee: "Brazil Daterra",
+    coffee: "Brazil Legender",
     city: "Savannah",
     state: "GA",
     region: "Southeast",
     website: "https://perccoffee.com",
-    shopUrl: "https://perccoffee.com/collections/coffee",
+    productUrl: "https://perccoffee.com/products/brazil",
     roast: "medium",
     brew: ["pour-over", "espresso", "cold"],
     notes: ["nutty", "chocolate", "caramel"],
-    process: "pulped natural",
+    process: "natural single origin",
     price: "$$",
     decaf: false,
     reason: "A smooth Southern pick for lower-acid comfort, nuttiness, and cold-brew friendliness."
@@ -553,14 +553,14 @@ const coffeeCatalog = [
     state: "DE",
     region: "Northeast",
     website: "https://www.brandywinecoffeeroasters.com",
-    shopUrl: "https://www.brandywinecoffeeroasters.com/collections/all-coffee-1",
+    productUrl: "https://www.brandywinecoffeeroasters.com/products/orbital-motion-espresso-blend-12oz-16-00",
     roast: "light",
-    brew: ["pour-over"],
-    notes: ["tropical", "berry", "winey"],
-    process: "experimental",
-    price: "$$$",
+    brew: ["pour-over", "espresso"],
+    notes: ["floral", "brown sugar", "spice", "stone fruit"],
+    process: "blend",
+    price: "$$",
     decaf: false,
-    reason: "A maximalist recommendation for colorful processing, loud fruit, and adventurous cups."
+    reason: "A bright modern espresso blend with brown-sugar sweetness, florals, spice, and peach."
   },
   {
     roaster: "ReAnimator Coffee",
@@ -569,7 +569,7 @@ const coffeeCatalog = [
     state: "PA",
     region: "Northeast",
     website: "https://www.reanimatorcoffee.com",
-    shopUrl: "https://www.reanimatorcoffee.com/collections/coffee",
+    productUrl: "https://www.reanimatorcoffee.com/products/foundation-blend-2",
     roast: "medium",
     brew: ["espresso", "milk", "pour-over"],
     notes: ["chocolate", "nutty", "caramel"],
@@ -585,14 +585,14 @@ const coffeeCatalog = [
     state: "VA",
     region: "Southeast",
     website: "https://www.redroostercoffee.com",
-    shopUrl: "https://www.redroostercoffee.com/collections/coffee",
-    roast: "medium",
+    productUrl: "https://www.redroostercoffee.com/products/organic-funky-chicken",
+    roast: "dark",
     brew: ["pour-over", "espresso"],
-    notes: ["berry", "tropical", "winey"],
-    process: "natural blend",
+    notes: ["nutty", "chocolate", "citrus"],
+    process: "washed blend",
     price: "$$",
     decaf: false,
-    reason: "A fruit-forward Virginia pick when your note choices point toward fermented, juicy flavors."
+    reason: "A medium-dark Virginia blend with pecan-praline sweetness, milk chocolate, and citrus lift."
   },
   {
     roaster: "Dune Coffee Roasters",
@@ -601,10 +601,10 @@ const coffeeCatalog = [
     state: "CA",
     region: "West Coast",
     website: "https://www.dunecoffee.com",
-    shopUrl: "https://www.dunecoffee.com/collections/coffee",
+    productUrl: "https://www.dunecoffee.com/products/zip-zinger",
     roast: "medium",
     brew: ["espresso", "milk", "pour-over"],
-    notes: ["chocolate", "citrus", "caramel"],
+    notes: ["chocolate", "stone fruit", "caramel"],
     process: "blend",
     price: "$$",
     decaf: false,
@@ -617,10 +617,10 @@ const coffeeCatalog = [
     state: "SC",
     region: "Southeast",
     website: "https://methodicalcoffee.com",
-    shopUrl: "https://methodicalcoffee.com/collections/coffee",
+    productUrl: "https://methodicalcoffee.com/products/belly-warmer",
     roast: "medium",
     brew: ["pour-over", "espresso", "milk"],
-    notes: ["chocolate", "caramel", "spice"],
+    notes: ["chocolate", "nutty", "caramel"],
     process: "blend",
     price: "$$",
     decaf: false,
@@ -633,14 +633,14 @@ const coffeeCatalog = [
     state: "DC",
     region: "Northeast",
     website: "https://smallplanescoffee.com",
-    shopUrl: "https://smallplanescoffee.com/collections/coffee",
-    roast: "light",
-    brew: ["pour-over"],
-    notes: ["citrus", "floral", "tea-like"],
-    process: "washed blend",
+    productUrl: "https://smallplanescoffee.com/products/arboretum",
+    roast: "medium",
+    brew: ["pour-over", "espresso", "milk", "cold"],
+    notes: ["chocolate", "nutty", "berry"],
+    process: "seasonal blend",
     price: "$$",
     decaf: false,
-    reason: "A clean DC filter pick for floral aromatics and crisp citrus."
+    reason: "A balanced DC blend for chocolate, toasted nuts, and ripe fruit across nearly any brew method."
   },
   {
     roaster: "Camber Coffee",
@@ -649,10 +649,10 @@ const coffeeCatalog = [
     state: "WA",
     region: "Pacific Northwest",
     website: "https://cambercoffee.com",
-    shopUrl: "https://cambercoffee.com/collections/coffee",
+    productUrl: "https://cambercoffee.com/product/skyline-espresso/",
     roast: "light",
     brew: ["pour-over", "espresso"],
-    notes: ["honey", "stone fruit", "citrus"],
+    notes: ["berry", "vanilla", "caramel"],
     process: "blend",
     price: "$$",
     decaf: false,
@@ -665,7 +665,7 @@ const coffeeCatalog = [
     state: "NC",
     region: "Southeast",
     website: "https://counterculturecoffee.com",
-    shopUrl: "https://counterculturecoffee.com/collections/coffee",
+    productUrl: "https://counterculturecoffee.com/products/12-oz-slow-motion",
     roast: "medium",
     brew: ["pour-over", "espresso", "milk"],
     notes: ["chocolate", "caramel", "nutty"],
@@ -681,7 +681,7 @@ const coffeeCatalog = [
     state: "CA",
     region: "West Coast",
     website: "https://www.vervecoffee.com",
-    shopUrl: "https://www.vervecoffee.com/collections/decaf",
+    productUrl: "https://www.vervecoffee.com/products/vancouver-swiss-water-decaf",
     roast: "medium",
     brew: ["pour-over", "espresso", "milk"],
     notes: ["chocolate", "brown sugar", "caramel"],
@@ -690,7 +690,11 @@ const coffeeCatalog = [
     decaf: true,
     reason: "A West Coast decaf path for sweet, rounded cups without flattening the coffee."
   }
-];
+].map((coffee) => ({
+  availability: "available",
+  lastChecked: "2026-09-02",
+  ...coffee
+}));
 
 const state = {
   wheelSelections: new Set(),
@@ -732,6 +736,15 @@ function titleCase(value) {
     .split(" ")
     .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
     .join(" ");
+}
+
+function formatCheckedDate(value) {
+  const [year, month, day] = value.split("-").map(Number);
+  return new Intl.DateTimeFormat("en-US", {
+    month: "short",
+    day: "numeric",
+    year: "numeric"
+  }).format(new Date(year, month - 1, day));
 }
 
 function createElement(tag, className, text) {
@@ -849,6 +862,7 @@ function roastWeight(roast) {
 
 function rankCatalog() {
   return coffeeCatalog
+    .filter((coffee) => coffee.availability === "available")
     .map((coffee) => ({
       ...coffee,
       score: scoreCoffee(coffee)
@@ -897,6 +911,7 @@ function renderCard(coffee, isPrimary = false) {
   meta.append(createElement("span", "pill", `${coffee.score}% match`));
   meta.append(createElement("span", "pill pill--coral", titleCase(coffee.roast)));
   meta.append(createElement("span", "pill pill--blue", coffee.price));
+  meta.append(createElement("span", "pill pill--available", `Available · checked ${formatCheckedDate(coffee.lastChecked)}`));
   content.append(meta);
 
   const title = createElement(isPrimary ? "h3" : "h3", isPrimary ? "coffee-title" : "", coffee.coffee);
@@ -916,11 +931,12 @@ function renderCard(coffee, isPrimary = false) {
   const foot = createElement("div", "card-foot");
   foot.append(createElement("span", "roaster-location", `${coffee.process} | ${coffee.region}`));
 
-  const shopLink = createElement("a", "shop-link", "Open roaster shop");
-  shopLink.href = coffee.shopUrl;
-  shopLink.target = "_blank";
-  shopLink.rel = "noreferrer";
-  foot.append(shopLink);
+  const productLink = createElement("a", "shop-link", "View this coffee");
+  productLink.href = coffee.productUrl;
+  productLink.target = "_blank";
+  productLink.rel = "noreferrer";
+  productLink.setAttribute("aria-label", `View ${coffee.coffee} from ${coffee.roaster}`);
+  foot.append(productLink);
   content.append(foot);
 
   card.append(content);
@@ -941,7 +957,7 @@ function updateRecommendations() {
   const [primary, ...rest] = ranked;
 
   dom.selectedCount.textContent = `${state.wheelSelections.size} selected`;
-  dom.resultHeadline.textContent = primary ? `${primary.coffee} from ${primary.roaster}` : "No match found";
+  dom.resultHeadline.textContent = primary ? `${primary.coffee} from ${primary.roaster}` : "No available coffee found";
   dom.selectionSummary.textContent = selectionSummary();
 
   dom.primaryMatch.innerHTML = "";
@@ -991,8 +1007,8 @@ function renderRoasterIndex() {
     const tile = createElement("article", "roaster-tile");
     tile.append(createElement("h3", "", coffee.roaster));
     tile.append(createElement("p", "", `${coffee.city}, ${coffee.state} | ${coffee.region}`));
-    const link = createElement("a", "", "Visit shop");
-    link.href = coffee.shopUrl;
+    const link = createElement("a", "", "Visit roaster");
+    link.href = coffee.website;
     link.target = "_blank";
     link.rel = "noreferrer";
     tile.append(link);

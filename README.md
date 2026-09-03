@@ -17,11 +17,11 @@ Then visit `http://localhost:4173`.
 - A generated editorial hero image stored at `assets/coffee-roastery-hero.png`.
 - The original CoffeeSubscription D3 flavor wheel, ported to `flavor-wheel.js` with the same hierarchy, palette, hover behavior, and category selection.
 - A recommendation engine in `app.js` that scores coffees by wheel selections, roast, brew method, region, budget, and decaf preference.
-- A starter catalog of US specialty roasters with official shop links.
+- A starter catalog of US specialty roasters with exact, official product links.
 
 ## Notes on coverage
 
-The current catalog is intentionally structured so more roasters or live inventory feeds can be added without changing the UI. Exact coffee availability changes frequently on third-wave roaster sites, so the prototype points to official shops rather than scraped stale listings.
+Each coffee record includes a `productUrl`, `availability`, and `lastChecked` date. Recommendations only rank records marked `available`, so changing a disappeared coffee to `unavailable` automatically substitutes the next-best match. Product links were checked against official roaster sites on September 2, 2026.
 
 ## Image prompt
 

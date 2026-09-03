@@ -581,6 +581,11 @@ select {
   background: #e4eff8;
 }
 
+.pill--available {
+  color: #386032;
+  background: #eaf4e5;
+}
+
 .coffee-title {
   margin-bottom: 6px;
   font-size: 30px;
