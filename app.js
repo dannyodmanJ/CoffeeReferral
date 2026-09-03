@@ -719,6 +719,7 @@ const dom = {
   selectedCount: document.querySelector("#selectedCount"),
   clearFlavorButton: document.querySelector("#clearFlavorButton"),
   selectionSummary: document.querySelector("#selectionSummary"),
+  resultEyebrow: document.querySelector("#resultEyebrow"),
   resultHeadline: document.querySelector("#resultHeadline"),
   primaryMatch: document.querySelector("#primaryMatch"),
   resultList: document.querySelector("#resultList"),
@@ -967,16 +968,33 @@ function renderCard(coffee, isPrimary = false) {
   return card;
 }
 
+function hasPreferenceSignal() {
+  return state.wheelSelections.size > 0
+    || state.roast !== "any"
+    || state.brew !== "any"
+    || state.region !== "any"
+    || state.budget !== "any"
+    || state.decaf;
+}
+
 function updateRecommendations() {
+  dom.selectedCount.textContent = `${state.wheelSelections.size} selected`;
+  dom.primaryMatch.innerHTML = "";
+  dom.resultList.innerHTML = "";
+
+  if (!hasPreferenceSignal()) {
+    dom.resultEyebrow.textContent = "Your recommendation";
+    dom.resultHeadline.textContent = "Tell us what you like and we'll find your coffee.";
+    dom.selectionSummary.textContent = "Choose a flavor note or set any preference to get started.";
+    return;
+  }
+
   const ranked = rankCatalog();
   const [primary, ...rest] = ranked;
 
-  dom.selectedCount.textContent = `${state.wheelSelections.size} selected`;
+  dom.resultEyebrow.textContent = primary ? "Best match" : "No match yet";
   dom.resultHeadline.textContent = primary ? `${primary.coffee} from ${primary.roaster}` : "No available coffee found";
   dom.selectionSummary.textContent = selectionSummary();
-
-  dom.primaryMatch.innerHTML = "";
-  dom.resultList.innerHTML = "";
 
   if (!primary) {
     return;
@@ -1005,10 +1023,13 @@ function selectionSummary() {
   if (state.region !== "any") {
     parts.push(state.region);
   }
+  if (state.budget !== "any") {
+    parts.push(`${state.budget} budget`);
+  }
   if (state.decaf) {
     parts.push("decaf-ready");
   }
-  return parts.length > 0 ? parts.join(" | ") : "Choose a few notes to sharpen the ranking.";
+  return parts.join(" | ");
 }
 
 function renderRoasterIndex() {

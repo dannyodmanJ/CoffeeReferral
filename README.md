@@ -18,6 +18,7 @@ Then visit `http://localhost:4173`.
 - The original CoffeeSubscription D3 flavor wheel, ported to `flavor-wheel.js` with the same hierarchy, palette, hover behavior, and category selection.
 - A recommendation engine in `app.js` that scores coffees by wheel selections, roast, brew method, region, budget, and decaf preference.
 - Qualitative match tiers in the UI so the weighted ranking is not presented as a mathematically precise percentage.
+- A true empty state that waits for at least one visitor preference before showing recommendations.
 - A starter catalog of US specialty roasters with exact, official product links.
 
 ## Notes on coverage
