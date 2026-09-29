@@ -25,6 +25,17 @@ Then visit `http://localhost:4173`.
 
 Each coffee record includes a `productUrl`, `availability`, and `lastChecked` date. Recommendations only rank records marked `available`, so changing a disappeared coffee to `unavailable` automatically substitutes the next-best match. Product links were checked against official roaster sites on September 2, 2026.
 
+## Analytics
+
+The lightweight `analytics.js` adapter tracks four GA4 custom events once per browser-tab session:
+
+- `visitor` when the site loads.
+- `matcher_used` when the visitor first selects a matcher preference.
+- `match_received` when the first recommendation is shown.
+- `roaster_clicked` when the visitor first opens a recommended coffee.
+
+Create a GA4 web data stream, then set its public measurement ID in the `coffee-referral-ga4-id` meta tag in `index.html`. With the tag left blank, no analytics network request is made; local previews log and retain the events in memory for testing. Events include matcher settings, the recommended coffee and roaster, match tier, and result position, but no names, email addresses, or other visitor-provided personal information. Register any event parameters you want to use in GA4 reports as custom dimensions; the four event names are available immediately for Realtime, DebugView, and funnel exploration.
+
 ## Image prompt
 
 The hero image was generated with the built-in image generation tool using an editorial third-wave roastery tasting table prompt with no brand names, text, logos, or people.

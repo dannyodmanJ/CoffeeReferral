@@ -918,7 +918,7 @@ function matchReason(coffee) {
   return coffee.reason;
 }
 
-function renderCard(coffee, isPrimary = false) {
+function renderCard(coffee, isPrimary = false, resultPosition = 1) {
   const card = createElement("article", `result-card ${isPrimary ? "result-card--primary" : "result-card--small"}`);
   const content = createElement("div", "result-content");
   const meta = createElement("div", "result-meta");
@@ -951,6 +951,14 @@ function renderCard(coffee, isPrimary = false) {
   productLink.target = "_blank";
   productLink.rel = "noreferrer";
   productLink.setAttribute("aria-label", `View ${coffee.coffee} from ${coffee.roaster}`);
+  productLink.addEventListener("click", () => {
+    trackAnalyticsEvent("roaster_clicked", {
+      coffee_name: coffee.coffee,
+      roaster_name: coffee.roaster,
+      match_tier: tier.label,
+      result_position: resultPosition
+    }, { once: true });
+  });
   foot.append(productLink);
   content.append(foot);
 
@@ -977,6 +985,42 @@ function hasPreferenceSignal() {
     || state.decaf;
 }
 
+function analyticsPreferenceProperties() {
+  const preferenceTypes = [];
+  if (state.wheelSelections.size > 0) {
+    preferenceTypes.push("flavor");
+  }
+  if (state.roast !== "any") {
+    preferenceTypes.push("roast");
+  }
+  if (state.brew !== "any") {
+    preferenceTypes.push("brew");
+  }
+  if (state.region !== "any") {
+    preferenceTypes.push("region");
+  }
+  if (state.budget !== "any") {
+    preferenceTypes.push("budget");
+  }
+  if (state.decaf) {
+    preferenceTypes.push("decaf");
+  }
+
+  return {
+    preference_types: preferenceTypes.join("|"),
+    flavor_count: state.wheelSelections.size,
+    roast: state.roast,
+    brew: state.brew,
+    region: state.region,
+    budget: state.budget,
+    decaf: state.decaf ? "yes" : "no"
+  };
+}
+
+function trackAnalyticsEvent(eventName, properties = {}, options = {}) {
+  window.CoffeeReferralAnalytics?.track(eventName, properties, options);
+}
+
 function updateRecommendations() {
   dom.selectedCount.textContent = `${state.wheelSelections.size} selected`;
   dom.primaryMatch.innerHTML = "";
@@ -989,6 +1033,8 @@ function updateRecommendations() {
     return;
   }
 
+  trackAnalyticsEvent("matcher_used", analyticsPreferenceProperties(), { once: true });
+
   const ranked = rankCatalog();
   const [primary, ...rest] = ranked;
 
@@ -1000,9 +1046,17 @@ function updateRecommendations() {
     return;
   }
 
-  dom.primaryMatch.append(renderCard(primary, true));
-  rest.slice(0, 6).forEach((coffee) => {
-    dom.resultList.append(renderCard(coffee));
+  const primaryTier = matchTier(primary.rankScore);
+  trackAnalyticsEvent("match_received", {
+    ...analyticsPreferenceProperties(),
+    coffee_name: primary.coffee,
+    roaster_name: primary.roaster,
+    match_tier: primaryTier.label
+  }, { once: true });
+
+  dom.primaryMatch.append(renderCard(primary, true, 1));
+  rest.slice(0, 6).forEach((coffee, index) => {
+    dom.resultList.append(renderCard(coffee, false, index + 2));
   });
 }
 
