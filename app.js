@@ -1018,7 +1018,7 @@ function analyticsPreferenceProperties() {
 }
 
 function trackAnalyticsEvent(eventName, properties = {}, options = {}) {
-  window.CoffeeReferralAnalytics?.track(eventName, properties, options);
+  window.RoastRegisterAnalytics?.track(eventName, properties, options);
 }
 
 function updateRecommendations() {

@@ -1,9 +1,9 @@
 (() => {
-  const measurementId = document.querySelector('meta[name="coffee-referral-ga4-id"]')?.content.trim() || "";
+  const measurementId = document.querySelector('meta[name="roast-register-ga4-id"]')?.content.trim() || "";
   const enabled = /^G-[A-Z0-9]+$/i.test(measurementId);
   const localPreview = ["", "localhost", "127.0.0.1"].includes(window.location.hostname);
   const debug = localPreview || new URLSearchParams(window.location.search).has("analyticsDebug");
-  const storageKey = `coffee-referral:analytics:${measurementId}`;
+  const storageKey = `roast-register:analytics:${measurementId}`;
   const events = [];
   let sentEvents = new Set();
 
@@ -57,7 +57,7 @@
     const event = { name: eventName, properties: eventProperties };
     events.push(event);
 
-    document.dispatchEvent(new CustomEvent("coffee-referral:analytics", { detail: event }));
+    document.dispatchEvent(new CustomEvent("roast-register:analytics", { detail: event }));
 
     if (debug) {
       console.info(`[analytics] ${eventName} ${JSON.stringify(eventProperties)}`);
@@ -70,7 +70,7 @@
     return true;
   }
 
-  window.CoffeeReferralAnalytics = Object.freeze({
+  window.RoastRegisterAnalytics = Object.freeze({
     enabled,
     getEvents: () => events.map((event) => ({
       name: event.name,
