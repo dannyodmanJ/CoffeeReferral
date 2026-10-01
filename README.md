@@ -27,14 +27,15 @@ Each coffee record includes a `productUrl`, `availability`, and `lastChecked` da
 
 ## Analytics
 
-The lightweight `analytics.js` adapter tracks four GA4 custom events once per browser-tab session:
+The lightweight `analytics.js` adapter tracks five GA4 custom events. Most are tracked once per browser-tab session; `flavor_changed` is tracked whenever a flavor is selected or removed:
 
 - `visitor` when the site loads.
+- `flavor_changed` when a visitor selects or removes a flavor.
 - `matcher_used` when the visitor first selects a matcher preference.
 - `match_received` when the first recommendation is shown.
 - `roaster_clicked` when the visitor first opens a recommended coffee.
 
-Create a GA4 web data stream, then set its public measurement ID in the `roast-register-ga4-id` meta tag in `index.html`. With the tag left blank, no analytics network request is made; local previews log and retain the events in memory for testing. Events include matcher settings, the recommended coffee and roaster, match tier, and result position, but no names, email addresses, or other visitor-provided personal information. Register any event parameters you want to use in GA4 reports as custom dimensions; the four event names are available immediately for Realtime, DebugView, and funnel exploration.
+Create a GA4 web data stream, then set its public measurement ID in the `roast-register-ga4-id` meta tag in `index.html`. With the tag left blank, no analytics network request is made; local previews log and retain the events in memory for testing. Events include flavor selections, matcher settings, the recommended coffee and roaster, match tier, and result position, but no names, email addresses, or other visitor-provided personal information. Register any event parameters you want to use in GA4 reports as custom dimensions; the five event names are available immediately for Realtime, DebugView, and funnel exploration.
 
 ## Image prompt
 

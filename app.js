@@ -764,11 +764,19 @@ function syncCanonicalNotes() {
 }
 
 function toggleWheelSelection(selection) {
-  if (state.wheelSelections.has(selection)) {
+  const wasSelected = state.wheelSelections.has(selection);
+
+  if (wasSelected) {
     state.wheelSelections.delete(selection);
   } else {
     state.wheelSelections.add(selection);
   }
+
+  trackAnalyticsEvent("flavor_changed", {
+    flavor_name: selection,
+    flavor_action: wasSelected ? "removed" : "selected",
+    selected_flavor_count: state.wheelSelections.size
+  });
 
   syncCanonicalNotes();
   wheelController.update(state.wheelSelections);
