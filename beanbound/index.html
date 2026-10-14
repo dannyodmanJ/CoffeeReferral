@@ -1,0 +1,234 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>BeanBound | Coffee Worth the Walk</title>
+    <meta
+      name="description"
+      content="A travel companion for finding remarkable independent cafes nearby, ranked by distance with visual latte-art reviews."
+    >
+    <meta name="theme-color" content="#143a32">
+    <meta name="beanbound-ga4-id" content="">
+    <link rel="stylesheet" href="styles.css?v=1">
+    <script src="analytics.js?v=1" defer></script>
+    <script src="app.js?v=1" defer></script>
+  </head>
+  <body>
+    <header class="hero" id="top">
+      <img
+        class="hero__image"
+        src="assets/beanbound-hero.png"
+        alt="Two lattes, a camera, and a city map on a sunny cafe table"
+      >
+      <div class="hero__wash" aria-hidden="true"></div>
+
+      <nav class="topbar" aria-label="Primary navigation">
+        <a class="brand" href="#top" aria-label="BeanBound home">
+          <span class="brand__mark" aria-hidden="true">
+            <span></span>
+          </span>
+          <span>BeanBound</span>
+        </a>
+        <div class="topbar__links">
+          <a href="#nearby">Nearby</a>
+          <a href="#city-guides">City guides</a>
+          <a href="#method">How it works</a>
+        </div>
+      </nav>
+
+      <section class="hero__content" aria-label="BeanBound introduction">
+        <p class="eyebrow">A coffee travel companion</p>
+        <h1>Good coffee,<br><em>closer.</em></h1>
+        <p class="hero__copy">
+          Find the independent cafes worth stepping off your route for—ranked by distance, then refined by what makes a stop memorable.
+        </p>
+
+        <form class="location-search" id="locationForm">
+          <label for="locationInput">Where are you exploring?</label>
+          <div class="location-search__controls">
+            <div class="location-input-wrap">
+              <span aria-hidden="true">⌖</span>
+              <input
+                id="locationInput"
+                type="search"
+                list="cityOptions"
+                placeholder="Try Portland, Seattle, or Austin"
+                autocomplete="off"
+              >
+              <datalist id="cityOptions"></datalist>
+            </div>
+            <button class="button button--coral" type="submit">Explore nearby</button>
+          </div>
+          <button class="location-button" id="useLocationButton" type="button">
+            <span aria-hidden="true">◎</span> Use my current location
+          </button>
+        </form>
+
+        <p class="location-status" id="locationStatus" aria-live="polite">
+          Previewing New York, NY with prototype listings.
+        </p>
+
+        <div class="hero__proof" aria-label="BeanBound features">
+          <span>Nearest first</span>
+          <span>Independent cafes</span>
+          <span>Photo-rich reviews</span>
+        </div>
+      </section>
+
+      <a class="scroll-cue" href="#nearby">
+        <span>See what’s close</span>
+        <span aria-hidden="true">↓</span>
+      </a>
+    </header>
+
+    <main>
+      <section class="explore" id="nearby">
+        <div class="section-heading section-heading--split">
+          <div>
+            <p class="eyebrow eyebrow--dark">Near you now</p>
+            <h2>Worth the walk.</h2>
+            <p id="resultsSummary">Showing cafes nearest to New York, NY.</p>
+          </div>
+          <div class="sort-note">
+            <span class="sort-note__dot" aria-hidden="true"></span>
+            Ranked by distance first
+          </div>
+        </div>
+
+        <section class="rating-category-panel" aria-labelledby="ratingCategoryHeading">
+          <div class="rating-category-panel__copy">
+            <p class="eyebrow eyebrow--dark">Community rating tiers</p>
+            <h3 id="ratingCategoryHeading">How far is it worth going?</h3>
+            <p>Ratings become simple travel recommendations without changing the nearest-first order.</p>
+          </div>
+          <div class="tier-tabs" id="ratingTierFilters" aria-label="Filter by rating category">
+            <button class="tier-button is-active" type="button" data-rating-tier="all" aria-pressed="true">
+              <strong>All</strong>
+              <span>BeanBound picks</span>
+            </button>
+            <button class="tier-button tier-button--walk" type="button" data-rating-tier="walk" aria-pressed="false">
+              <strong>4.5–4.79</strong>
+              <span>Worth a walk</span>
+            </button>
+            <button class="tier-button tier-button--drive" type="button" data-rating-tier="drive" aria-pressed="false">
+              <strong>4.8–4.89</strong>
+              <span>Worth a drive</span>
+            </button>
+            <button class="tier-button tier-button--roadtrip" type="button" data-rating-tier="roadtrip" aria-pressed="false">
+              <strong>4.9+</strong>
+              <span>Worth a road trip</span>
+            </button>
+          </div>
+        </section>
+
+        <div class="filter-bar" aria-label="Cafe filters">
+          <div class="filter-bar__group" id="featureFilters">
+            <button class="filter-chip is-active" type="button" data-feature="latte-art" aria-pressed="true">
+              <span aria-hidden="true">✦</span> Latte art
+            </button>
+            <button class="filter-chip" type="button" data-feature="laptop" aria-pressed="false">Laptop friendly</button>
+            <button class="filter-chip" type="button" data-feature="bakery" aria-pressed="false">Great pastries</button>
+            <button class="filter-chip" type="button" data-feature="roasts" aria-pressed="false">Roasts here</button>
+          </div>
+          <label class="radius-control">
+            <span>Within</span>
+            <select id="radiusSelect">
+              <option value="2">2 miles</option>
+              <option value="10" selected>10 miles</option>
+              <option value="25">25 miles</option>
+              <option value="all">Any distance</option>
+            </select>
+          </label>
+        </div>
+
+        <div class="explore-grid">
+          <section class="results-list" id="resultsList" aria-label="Nearby cafe recommendations" aria-live="polite"></section>
+
+          <aside class="map-card" aria-label="Map of nearby cafes">
+            <div class="map-card__topline">
+              <div>
+                <span class="map-card__label">Live area</span>
+                <strong id="mapLocationLabel">New York, NY</strong>
+              </div>
+              <button class="map-reset" id="resetMapButton" type="button">Reset view</button>
+            </div>
+            <div class="map" id="mapCanvas">
+              <div class="map__water" aria-hidden="true"></div>
+              <div class="map__road map__road--one" aria-hidden="true"></div>
+              <div class="map__road map__road--two" aria-hidden="true"></div>
+              <div class="map__road map__road--three" aria-hidden="true"></div>
+              <div class="map__park map__park--one" aria-hidden="true"></div>
+              <div class="map__park map__park--two" aria-hidden="true"></div>
+              <div class="map__pins" id="mapPins"></div>
+              <div class="map__you" aria-label="Your selected location"><span></span>You</div>
+            </div>
+            <div class="map-card__footer">
+              <span>Distances are straight-line estimates</span>
+              <span id="mapCount">0 nearby</span>
+            </div>
+          </aside>
+        </div>
+      </section>
+
+      <section class="city-band" id="city-guides">
+        <div class="section-heading section-heading--light">
+          <p class="eyebrow">Coffee cities</p>
+          <h2>Land somewhere new.<br>Find your local.</h2>
+        </div>
+        <div class="city-grid" id="cityGrid"></div>
+      </section>
+
+      <section class="method" id="method">
+        <div class="section-heading">
+          <p class="eyebrow eyebrow--dark">The BeanBound method</p>
+          <h2>Built for the detour.</h2>
+          <p>Roast style still matters. On the road, where a cafe is—and whether it is worth the stop—matters first.</p>
+        </div>
+        <div class="method-grid">
+          <article>
+            <span>01</span>
+            <h3>Start with distance</h3>
+            <p>Every list begins with the cafes closest to your current or chosen location.</p>
+          </article>
+          <article>
+            <span>02</span>
+            <h3>Read the room</h3>
+            <p>Filter for laptop space, pastries, in-house roasting, or the quality of the milk program.</p>
+          </article>
+          <article>
+            <span>03</span>
+            <h3>See the cup</h3>
+            <p>Visual review galleries make latte art and cafe atmosphere part of the decision.</p>
+          </article>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <a class="brand brand--footer" href="#top">
+        <span class="brand__mark" aria-hidden="true"><span></span></span>
+        <span>BeanBound</span>
+      </a>
+      <p>Prototype listings and review photography demonstrate the MVP experience. Live venue data comes next.</p>
+      <div class="footer__links">
+        <a href="https://unsplash.com" target="_blank" rel="noreferrer">Review photos: Unsplash contributors</a>
+        <a href="#top">Back to top ↑</a>
+      </div>
+    </footer>
+
+    <dialog class="gallery-dialog" id="galleryDialog">
+      <button class="gallery-dialog__close" id="galleryClose" type="button" aria-label="Close gallery">×</button>
+      <button class="gallery-dialog__nav gallery-dialog__nav--prev" id="galleryPrev" type="button" aria-label="Previous photo">←</button>
+      <figure>
+        <img id="galleryImage" src="" alt="">
+        <figcaption>
+          <span id="galleryPosition"></span>
+          <strong id="galleryTitle"></strong>
+          <p id="galleryCaption"></p>
+        </figcaption>
+      </figure>
+      <button class="gallery-dialog__nav gallery-dialog__nav--next" id="galleryNext" type="button" aria-label="Next photo">→</button>
+    </dialog>
+  </body>
+</html>
